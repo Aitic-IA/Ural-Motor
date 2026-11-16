@@ -8,7 +8,7 @@
 <style>
 /* ============================================================
    URAL MOTOR · Aula AITIC · versión 2 (documento único)
-   Estructura: cabecera + pestañas · tres <section class="jornada"> · pie.
+   Estructura: cabecera + pestañas · cuatro <section class="jornada"> · pie.
    Para añadir una jornada: copia una <section class="jornada">, dale id="jornadaN",
    añade su pestaña en <nav class="tabs"> y nada más. El resto es común.
    ============================================================ */
@@ -197,6 +197,62 @@ input.f-in{display:block;width:100%;margin-top:.3rem;background:var(--bg);color:
   #jornada3 .j3-method li{grid-template-columns:1fr;gap:.12rem}
 }
 
+/* Jornada 4 · recorrido de trabajo autónomo */
+.tabs{grid-template-columns:repeat(4,minmax(0,1fr))}
+#jornada4 .j4-start{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin:1.05rem 0}
+#jornada4 .j4-start>div{background:var(--paper);border:1px solid var(--line);padding:.7rem .9rem;border-radius:.55rem;font-size:.9rem}
+#jornada4 .j4-start b,#jornada4 .j4-start span{display:block}
+#jornada4 .j4-start span{color:var(--muted);margin-top:.15rem}
+#jornada4 .j4-nav-title{margin:1.4rem 0 .5rem}
+#jornada4 .j4-steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.35rem;margin:.4rem 0 .75rem}
+#jornada4 .j4-steps li{margin:0;min-width:0}
+#jornada4 .j4-steps button{display:flex;width:100%;height:100%;flex-direction:column;align-items:center;gap:.3rem;min-height:76px;font-size:.78rem;font-weight:700;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:.5rem;padding:.5rem .2rem}
+#jornada4 .j4-steps button span{display:grid;place-items:center;width:1.5rem;height:1.5rem;border-radius:50%;background:var(--soft);color:var(--ink)}
+#jornada4 .j4-steps button[aria-current=step]{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+#jornada4 .j4-steps button[aria-current=step] span{background:var(--brand-ink);color:var(--brand)}
+#jornada4 .j4-steps button:hover{border-color:var(--accent)}
+#jornada4 .j4-work{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--brand);border-radius:.65rem;padding:1.1rem 1.25rem;scroll-margin-top:1rem}
+#jornada4 .j4-position{font-size:.78rem;font-weight:800;letter-spacing:.03em;color:var(--muted);margin:0 0 .5rem}
+#jornada4 [data-j4-panel]>h3{font-size:1.3rem;margin:0 0 .6rem;line-height:1.25;max-width:40rem}
+#jornada4 [data-j4-panel]>p{max-width:49rem}
+#jornada4 .j4-do{padding-left:1.25rem;margin:.85rem 0 1rem}
+#jornada4 .j4-do li+li{margin-top:.7rem}
+#jornada4 .j4-do li::marker{font-weight:700;color:var(--muted)}
+#jornada4 .j4-ready{padding:.7rem .8rem;border-radius:.45rem;background:var(--soft);font-size:.9rem;margin:1rem 0 .3rem}
+#jornada4 .j4-ready b{display:block;margin-bottom:.15rem}
+#jornada4 .j4-mini{border:1px solid var(--line);border-radius:.45rem;margin:.55rem 0;background:var(--paper);font-size:.9rem}
+#jornada4 .j4-mini>summary{padding:.6rem .75rem;font-weight:700;min-height:44px}
+#jornada4 .j4-mini>p,#jornada4 .j4-mini>dl{margin:.2rem .8rem .8rem}
+#jornada4 .j4-mini[open]{border-color:var(--accent)}
+#jornada4 .j4-method{margin:0;padding:0}
+#jornada4 .j4-method>div{display:grid;grid-template-columns:7rem 1fr;gap:.6rem;padding:.4rem 0;border-bottom:1px solid var(--line)}
+#jornada4 .j4-method>div:last-child{border:0}
+#jornada4 .j4-method dt{font-weight:700}
+#jornada4 .j4-method dd{margin:0}
+#jornada4 .j4-pager{display:flex;justify-content:space-between;align-items:center;gap:.5rem;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:.8rem;margin-top:1rem}
+#jornada4 button:disabled{opacity:.5;cursor:default;filter:none}
+#jornada4 .j4-support{margin-top:.65rem}
+#jornada4 .j4-help-grid .j4-mini:first-child{margin-top:0}
+#jornada4 .j4-support select{display:block;max-width:100%;width:100%;padding:.55rem;border:1px solid var(--line);border-radius:.4rem;background:var(--bg);color:var(--ink);min-height:44px}
+@media(max-width:640px){
+  .tabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:.3rem;padding-bottom:.5rem}
+  .tabs a{border-bottom:1px solid var(--line);border-radius:.45rem}
+  #jornada4 .j4-start{grid-template-columns:1fr;gap:.4rem}
+  #jornada4 .j4-start>div{padding:.6rem .75rem}
+  #jornada4 .j4-steps{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #jornada4 .j4-steps button{flex-direction:row;justify-content:center;min-height:48px;font-size:.72rem;gap:.3rem}
+  #jornada4 .j4-steps button span{width:1.3rem;height:1.3rem;flex-shrink:0}
+  #jornada4 .j4-work{padding:.9rem .8rem}
+  #jornada4 .j4-pager .caption{order:3;width:100%;text-align:center}
+  #jornada4 .j4-method>div{grid-template-columns:1fr;gap:.1rem}
+}
+@media print{
+  #jornada4 .j4-steps,#jornada4 .j4-pager,#jornada4 .j4-position{display:none!important}
+  #jornada4 [data-j4-panel]{display:block!important;break-inside:avoid;margin-bottom:1rem}
+  #jornada4 .j4-work{border:0;padding:0}
+  #jornada4 [data-j4-case]{display:block!important}
+}
+
 </style>
 </head>
 <body>
@@ -208,13 +264,14 @@ input.f-in{display:block;width:100%;margin-top:.3rem;background:var(--bg);color:
       <span class="logo"><img src="data:image/png;base64,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" alt="Grupo Ureta Automóviles" width="110" height="29"></span>
       <div>
         <h1>URAL MOTOR · IA aplicada al trabajo</h1>
-        <p>Aula de consulta · Diego Huidobro · AITIC · Actualizada el 9 de noviembre de 2026</p>
+        <p>Aula de consulta · Diego Huidobro · AITIC · Actualizada el 16 de noviembre de 2026</p>
       </div>
     </div>
     <nav class="tabs" aria-label="Jornadas del curso">
       <a href="#jornada1">Jornada 1 <small>Ficha profesional y cómo pedir</small></a>
       <a href="#jornada2">Jornada 2 <small>Proyectos, fuentes y ayudas</small></a>
       <a href="#jornada3">Jornada 3 <small>Vuestros documentos, en directo</small></a>
+      <a href="#jornada4">Jornada 4 <small>Tu tarea, paso a paso</small></a>
     </nav>
   </div>
 </header>
@@ -688,6 +745,169 @@ Motor Norte es un concesionario ficticio. Trabajas en Recambios. Quieres pedir a
   <p class="foot">Trabaja con datos autorizados y conserva el original. La comprobación humana forma parte del trabajo, no es un extra.</p>
 </section>
 
+<section class="jornada" id="jornada4" data-journey="jornada4" aria-labelledby="t-j4" hidden>
+  <p class="eyebrow">Jornada 4 · Taller con tus documentos</p>
+  <h2 class="title" id="t-j4">Ahora, tu tarea.</h2>
+  <p class="lead">Elige un trabajo que necesites resolver. Sigue estos pasos a tu ritmo mientras Diego pasa por los puestos.</p>
+  <div class="j4-start">
+    <div><b>Hoy te llevas</b><span>Un resultado comprobado y una forma de volver a hacerlo.</span></div>
+    <div><b>Para empezar</b><span>Tu tarea, los archivos necesarios y el original abierto para revisar.</span></div>
+  </div>
+  <div class="actions">
+    <a class="btn" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">Abrir ChatGPT</a>
+    <a class="btn secondary" href="https://claude.ai/" target="_blank" rel="noopener noreferrer">Abrir Claude</a>
+    <button class="btn secondary" type="button" data-j4-jump="j4-ayuda">Me he atascado</button>
+  </div>
+  <p class="caption">Si ya has empezado, abre el paso en el que estés. Escribe en el chat con tus palabras; aquí tienes las preguntas que te ayudarán.</p>
+
+  <h3 class="j4-nav-title">Tu recorrido</h3>
+  <ol class="j4-steps" aria-label="Pasos del taller">
+    <li><button type="button" data-j4-step="1" aria-current="step" aria-controls="j4-paso-1"><span>1</span>Tu tarea</button></li>
+    <li><button type="button" data-j4-step="2" aria-controls="j4-paso-2"><span>2</span>Archivos</button></li>
+    <li><button type="button" data-j4-step="3" aria-controls="j4-paso-3"><span>3</span>Primera prueba</button></li>
+    <li><button type="button" data-j4-step="4" aria-controls="j4-paso-4"><span>4</span>Comprobar</button></li>
+    <li><button type="button" data-j4-step="5" aria-controls="j4-paso-5"><span>5</span>Repetir</button></li>
+    <li><button type="button" data-j4-step="6" aria-controls="j4-paso-6"><span>6</span>Guardar</button></li>
+  </ol>
+
+  <div class="j4-work" id="j4-trabajo">
+    <p class="j4-position" id="j4-position" aria-live="polite">Paso 1 de 6 · Tu tarea</p>
+    <article id="j4-paso-1" data-j4-panel="1" aria-labelledby="j4-h1">
+      <h3 id="j4-h1" tabindex="-1">Elige una tarea y abre su proyecto</h3>
+      <p>Trabaja con algo que necesites de verdad. Para empezar hoy, elige una parte: un mes, un centro, unas operaciones o unos documentos.</p>
+      <ol class="j4-do">
+        <li><b>Define qué quieres tener al terminar.</b> ¿Una lista de diferencias, un registro de facturas, una parte de tu informe? ¿Para qué lo usarás?</li>
+        <li><b>Abre el proyecto de esa tarea.</b> Si no tienes uno, crea un proyecto y ponle un nombre que reconozcas. Puedes empezar sin instrucciones y prepararlas al final.</li>
+        <li><b>Elige los archivos imprescindibles.</b> Si tienes un resultado anterior comprobado, resérvalo para comparar. No hace falta subir toda tu documentación.</li>
+      </ol>
+      <details class="j4-mini"><summary>No sé cómo concretar mi tarea</summary><p>Piensa en la próxima revisión, informe o listado que tengas que preparar. ¿Qué parte te obliga a buscar datos, comparar o copiar información? Empieza por esa parte.</p><p>Si no has traído documentos, utiliza los Excel o los PDF ficticios del material de clase. Elige qué resultado te sería útil.</p></details>
+      <p class="j4-ready"><b>Pasa al siguiente paso cuando…</b> puedas explicar qué quieres obtener y tengas localizado el archivo con el que empezar.</p>
+    </article>
+
+    <article id="j4-paso-2" data-j4-panel="2" aria-labelledby="j4-h2" hidden>
+      <h3 id="j4-h2" tabindex="-1">Aporta los archivos y comprueba qué ha entendido</h3>
+      <p>Abre tú el original antes de adjuntarlo. Después comprueba que la IA está trabajando con la información correcta.</p>
+      <ol class="j4-do">
+        <li><b>Revisa la copia que vas a utilizar.</b> ¿Es el mes correcto? ¿Qué hojas, páginas o columnas necesitas? Usa datos autorizados; retira lo sensible o innecesario.</li>
+        <li><b>Adjunta una primera parte</b> en el chat del proyecto o añádela a sus fuentes, según tu herramienta. Identifica qué archivos corresponden a esta prueba.</li>
+        <li><b>Comprueba su lectura antes de encargar el trabajo completo.</b> ¿Qué archivos ha podido leer? ¿Qué hojas o documentos reconoce? ¿Qué información no puede interpretar?</li>
+      </ol>
+      <p class="check">Compara su descripción con el original. Ver el nombre de un archivo no demuestra que haya leído su contenido.</p>
+      <details class="j4-mini"><summary>¿Qué conviene mirar en mi archivo?</summary><p><b>Excel:</b> hojas, nombres de columnas, fechas, unidades y filas que sean totales. <b>PDF:</b> páginas, número de documentos y si se leen los datos. Un PDF puede contener varias facturas.</p><p>Si algo no coincide, aclara el significado o reduce la prueba antes de seguir.</p></details>
+      <p class="j4-ready"><b>Pasa al siguiente paso cuando…</b> hayas contrastado qué está leyendo y sepas qué parte del archivo utilizará.</p>
+    </article>
+
+    <article id="j4-paso-3" data-j4-panel="3" aria-labelledby="j4-h3" hidden>
+      <h3 id="j4-h3" tabindex="-1">Explica el encargo y haz una prueba pequeña</h3>
+      <p>Cuenta cómo necesitas hacer el trabajo. Tú conoces sus criterios; la IA necesita que se los expliques.</p>
+      <ol class="j4-do">
+        <li><b>Describe el resultado.</b> ¿Qué necesitas ver? Si es una tabla, ¿qué columnas te servirían? ¿Qué archivo, hoja o página permitirá comprobar cada dato?</li>
+        <li><b>Aclara las reglas.</b> ¿Qué periodo entra? ¿Qué identifica cada operación? ¿Qué significa cada importe? ¿Qué debe quedar pendiente si falta información?</li>
+        <li><b>Empieza con pocos datos.</b> Una factura, tres operaciones o una parte de tu plantilla. Deja otro documento o lote para probar después.</li>
+      </ol>
+      <details class="j4-mini"><summary>Recordatorio del método OCDTF</summary>
+        <dl class="j4-method"><div><dt>O · Objetivo</dt><dd>¿Qué quieres conseguir?</dd></div><div><dt>C · Contexto</dt><dd>¿Qué trabajo estás haciendo y para qué lo usarás?</dd></div><div><dt>D · Datos</dt><dd>¿Qué archivos, periodos y reglas necesita?</dd></div><div><dt>T · Tono</dt><dd>¿Cómo quieres que te lo explique, si necesitas explicación?</dd></div><div><dt>F · Formato</dt><dd>¿Cómo necesitas recibirlo y qué debe incluir?</dd></div></dl>
+        <p class="caption">Escribe tu petición en el chat con tus respuestas. No necesitas la misma cantidad de texto para cada apartado.</p>
+      </details>
+      <details class="j4-mini"><summary>¿No sabes qué reglas explicar?</summary><p>Piensa qué compruebas tú al hacer esta tarea. Una referencia repetida, una fecha fuera del mes o un abono pueden cambiar el resultado. Si no sabes decidir una regla, deja esa parte pendiente y consúltala con Diego.</p></details>
+      <p class="j4-ready"><b>Pasa al siguiente paso cuando…</b> tengas una primera respuesta pequeña que puedas comprobar.</p>
+    </article>
+
+    <article id="j4-paso-4" data-j4-panel="4" aria-labelledby="j4-h4" hidden>
+      <h3 id="j4-h4" tabindex="-1">Comprueba la respuesta y corrige lo concreto</h3>
+      <p>Abre el documento original junto a la respuesta. La comprobación no depende de que la IA te diga que está segura.</p>
+      <ol class="j4-do">
+        <li><b>Localiza dos datos y contrástalos.</b> Por ejemplo, una referencia y su importe. Comprueba también el periodo, el signo y las unidades cuando influyan.</li>
+        <li><b>Revisa una duda o excepción.</b> Si falta un dato, hay un duplicado o una operación no aparece, ¿está reflejado y puedes explicar el motivo?</li>
+        <li><b>Si hay un error, identifica dónde.</b> Señala qué afirma la respuesta, qué aparece en la fuente y qué regla debe corregirse. Revisa después el resultado corregido.</li>
+      </ol>
+      <p class="warn">Dos datos correctos son un primer control. Al ampliar el trabajo, revisa también recuentos, exclusiones y casos pendientes. En entregables sensibles, aplica los controles de tu departamento.</p>
+      <details class="j4-mini"><summary>La respuesta parece correcta, pero no sé comprobarla</summary><p>Empieza por una operación que puedas resolver tú con el original. Sigue el dato desde su hoja o página hasta la salida. Si no puedes localizarlo, pide que se identifique su origen y avisa a Diego antes de darlo por válido.</p></details>
+      <p class="j4-ready"><b>Pasa al siguiente paso cuando…</b> hayas contrastado la prueba y sepas qué errores o dudas siguen pendientes.</p>
+    </article>
+
+    <article id="j4-paso-5" data-j4-panel="5" aria-labelledby="j4-h5" hidden>
+      <h3 id="j4-h5" tabindex="-1">Amplía el trabajo y prueba con otro lote</h3>
+      <p>Ahora comprueba si el procedimiento sirve para continuar con tu tarea.</p>
+      <ol class="j4-do">
+        <li><b>Aplica las reglas revisadas</b> al resto del alcance que hayas elegido. Comprueba cuántas entradas se han tratado y cuáles han quedado fuera.</li>
+        <li><b>Haz una segunda prueba</b> con otro archivo, periodo o grupo de registros que no usaras al principio. Mantén las reglas y el formato; identifica las nuevas entradas.</li>
+        <li><b>Contrasta los datos nuevos.</b> ¿Ha mantenido el criterio? ¿Ha mezclado periodos? ¿Puedes encontrar el origen de dos datos y explicar los pendientes?</li>
+      </ol>
+      <details class="j4-mini"><summary>Solo tengo un archivo o un periodo</summary><p>Reserva una parte del archivo para la segunda prueba: otras filas, otra hoja o un documento distinto del mismo lote. Esto prueba el procedimiento con otros datos, pero todavía no demuestra que funcione en otro mes.</p></details>
+      <details class="j4-mini"><summary>Ya funciona: ¿puedo hacer un panel?</summary><p>Si te ayuda a trabajar, puedes explorar una visualización. Empieza con pocos indicadores y define de qué datos salen. Comprueba que los totales y filtros coinciden con la tabla revisada. Guarda también esa tabla.</p></details>
+      <p class="j4-ready"><b>Pasa al siguiente paso cuando…</b> hayas hecho la segunda prueba o hayas identificado exactamente qué falta para poder hacerla.</p>
+    </article>
+
+    <article id="j4-paso-6" data-j4-panel="6" aria-labelledby="j4-h6" hidden>
+      <h3 id="j4-h6" tabindex="-1">Guarda el resultado y prepara la próxima vez</h3>
+      <p>Deja el trabajo listo para retomarlo sin reconstruir toda la conversación.</p>
+      <ol class="j4-do">
+        <li><b>Descarga y abre el resultado.</b> Comprueba que el archivo contiene lo que has revisado. Conserva el original y separa los periodos o versiones.</li>
+        <li><b>Prepara las instrucciones del proyecto a partir del trabajo realizado.</b> Puedes apoyarte en la IA. Deben recoger el objetivo, los tipos de archivo, las reglas confirmadas, el formato y la revisión necesaria.</li>
+        <li><b>Revisa esas instrucciones antes de guardarlas.</b> Distingue lo que sirve siempre de lo que cambiará: mes, nombres de archivos y datos concretos. Lo no decidido debe quedar pendiente.</li>
+      </ol>
+      <p class="check">Cuando las hayas revisado, guárdalas en la configuración del proyecto, si tu herramienta lo permite, y conserva una copia junto al resultado.</p>
+      <details class="j4-mini"><summary>¿Qué tendré que aportar la próxima vez?</summary><p>Los archivos nuevos, su periodo y cualquier cambio en las reglas. Identifica las versiones que debe usar; no des por hecho que un archivo con el mismo nombre sustituye al anterior o que la IA leerá todo sin que se lo indiques.</p></details>
+      <p class="j4-ready"><b>Para cerrar…</b> enseña a Diego qué has conseguido, qué has comprobado y qué harás la próxima vez. Si algo sigue pendiente, guarda también el motivo.</p>
+    </article>
+
+    <div class="j4-pager">
+      <button type="button" class="btn secondary" id="j4-prev" disabled>← Anterior</button>
+      <span class="caption" id="j4-nav-note">Puedes volver a cualquier paso.</span>
+      <button type="button" class="btn" id="j4-next">Siguiente paso →</button>
+    </div>
+  </div>
+
+  <details class="card j4-support" id="j4-casos">
+    <summary><span class="num">i</span><span><b>Una pista para tu tipo de trabajo</b><small>Inventario, facturas, plantillas o normas de rappel.</small></span></summary>
+    <div class="inside">
+      <label class="f" for="j4-case">Elige solo si necesitas una orientación</label>
+      <select id="j4-case"><option value="general">Mi tarea es otra</option><option value="cruce">Comparar listados o inventario</option><option value="facturas">Facturas y justificantes</option><option value="plantilla">Horas e informes en una plantilla</option><option value="rappel">Normas y tablas de rappel</option></select>
+      <div data-j4-case="general"><p>Aplica el recorrido a tu tarea. Define una salida que puedas revisar hoy, las fuentes necesarias y una segunda prueba. Si aún no sabes acotarla, concreta con Diego una primera parte.</p></div>
+      <div data-j4-case="cruce" hidden><ul><li><b>Prepara:</b> ambos listados del periodo elegido y el dato que identifica la misma operación o elemento.</li><li><b>Busca:</b> una tabla con los dos valores, diferencia, estado y origen. Decide cómo tratar duplicados y ausencias.</li><li><b>Revisa:</b> periodo, códigos, unidades y almacenes. Una diferencia no indica por sí sola cuál de las dos fuentes es correcta.</li></ul></div>
+      <div data-j4-case="facturas" hidden><ul><li><b>Prepara:</b> pocas facturas o justificantes y las columnas que necesitas en tu registro.</li><li><b>Busca:</b> una fila por documento, archivo y página, con datos ausentes señalados. Distingue factura, abono y albarán.</li><li><b>Revisa:</b> número, importe y signo. Un dato calculado debe distinguirse de uno leído. Para comparar con pagos, necesitas también esos movimientos.</li></ul></div>
+      <div data-j4-case="plantilla" hidden><ul><li><b>Prepara:</b> una copia de la plantilla y las fuentes de una parte pequeña del informe. Si existe, ten a mano un periodo ya comprobado.</li><li><b>Busca:</b> qué valor corresponde a cada campo y de dónde sale. Empieza con un taller o una parte de la plantilla.</li><li><b>Revisa:</b> qué celdas son de entrada y cuáles contienen fórmulas. El color por sí solo no basta. Si hay datos de personal, comprueba el permiso de uso antes de adjuntarlos.</li></ul></div>
+      <div data-j4-case="rappel" hidden><ul><li><b>Prepara:</b> la norma de la marca y su versión o vigencia. Separa condiciones cuantitativas y cualitativas.</li><li><b>Busca:</b> una tabla por tipo y periodo con sus condiciones y página de origen.</li><li><b>Revisa:</b> si la condición se aplica a tu operación. Una norma explica el criterio; calcular el resultado real exige también los datos de las operaciones.</li></ul></div>
+    </div>
+  </details>
+
+  <details class="card j4-support" id="j4-ayuda">
+    <summary><span class="num">?</span><span><b>Me he atascado: ¿qué puedo hacer?</b><small>Prueba la ayuda que encaje. Si sigues bloqueado, avisa a Diego.</small></span></summary>
+    <div class="inside j4-help-grid">
+      <details class="j4-mini"><summary>No sé qué escribir en el chat</summary><p>Vuelve a tu objetivo. ¿Qué tienes, qué necesitas conseguir y cómo quieres recibirlo? Añade el archivo y las reglas que conoces. Usa el recordatorio OCDTF del paso 3.</p></details>
+      <details class="j4-mini"><summary>No lee el archivo o interpreta mal una columna</summary><p>Confirma el archivo, la hoja y el periodo. Prueba con una parte pequeña y explica qué significa la columna. Si el documento no se lee, utiliza otra copia legible o avisa a Diego; no completes los datos de memoria.</p></details>
+      <details class="j4-mini"><summary>El resultado no cuadra o faltan filas</summary><p>Elige un ejemplo y compáralo con el original. Revisa fechas, filtros, unidades, signos, totales y referencias repetidas. Localiza una diferencia concreta antes de rehacer todo.</p></details>
+      <details class="j4-mini"><summary>La IA sigue trabajando</summary><p>Mientras termina, localiza dos datos para comprobar, anota una regla o prepara el segundo lote. Evita enviar de nuevo el mismo encargo sin comprobar si el anterior sigue en marcha.</p></details>
+      <details class="j4-mini"><summary>Estoy esperando a Diego</summary><p>Deja visible el paso y la duda concreta. Mientras tanto, puedes localizar datos en los originales, revisar las columnas que necesitas o anotar qué tendría que comprobarse.</p><p>Si la duda cambia una regla importante, deja esa parte pendiente: no amplíes el trabajo suponiendo la respuesta.</p></details>
+      <details class="j4-mini"><summary>He terminado la primera prueba</summary><p>Contrasta una excepción y prueba con otro lote. Después guarda el resultado y las instrucciones revisadas del proyecto. Si ya está hecho, enseña tu avance a Diego y acuerda una mejora útil.</p></details>
+      <details class="j4-mini"><summary>Mi cuenta ha llegado a un límite</summary><p>Guarda lo obtenido y anota el mensaje. Puedes comprobar los originales y preparar las reglas mientras avisas a Diego. Los planes de pago también pueden tener límites.</p></details>
+    </div>
+  </details>
+
+  <details class="card j4-support" id="j4-conectar">
+    <summary><span class="num">⇄</span><span><b>¿Me ayudaría conectar el correo o los archivos?</b><small>Una mejora para tu tarea, cuando tengas claro qué información necesitas.</small></span></summary>
+    <div class="inside">
+      <p>Una conexión permite acceder a información de un servicio, según sus funciones y permisos. Puede ahorrarte buscar y adjuntar archivos. Por sí sola no deja ejecutado un proceso automático.</p>
+      <ol><li><b>Identifica la necesidad.</b> ¿Qué archivo o correo necesitas recuperar para la tarea que estás haciendo?</li><li><b>Comprueba el acceso.</b> Busca el servicio en las apps o integraciones de tu IA. La disponibilidad depende de tu cuenta y configuración. Si requiere permiso de empresa, consúltalo antes de conectar.</li><li><b>Revisa la cuenta y los permisos.</b> Completa tú el inicio de sesión de forma privada. Una carpeta de pruebas no garantiza que todo el permiso quede limitado a ella.</li><li><b>Prueba con un archivo conocido.</b> Comprueba que puede leer su contenido, abre el original y contrasta un dato. Localizar solo su nombre no basta.</li></ol>
+      <p class="check">Si el acceso se bloquea, sigue con una copia adjunta autorizada y anota qué permiso o función falta comprobar. Escribir, mover archivos o programar acciones son capacidades que hay que revisar por separado.</p>
+    </div>
+  </details>
+
+  <details class="card notebook j4-support" data-notes="jornada4">
+    <summary><span><b>Mis notas para continuar</b><small>Opcional · el trabajo se hace en tu IA; aquí puedes guardar un recordatorio.</small></span></summary>
+    <div class="inside">
+      <label class="f">Mi tarea y el resultado que necesito<textarea data-note="j4.objetivo" rows="2"></textarea></label>
+      <label class="f">Lo que he comprobado y las reglas que debo conservar<textarea data-note="j4.reglas" rows="2"></textarea></label>
+      <label class="f">Mi siguiente paso o la duda que queda pendiente<textarea data-note="j4.siguiente" rows="2"></textarea></label>
+      <button type="button" class="btn" data-export="jornada4">Descargar mis notas (TXT)</button>
+      <p class="status" role="status"></p>
+      <p class="caption">No escribas datos sensibles aquí. El aula no envía tus notas a Diego. El guardado en este navegador se activa en «Opciones».</p>
+    </div>
+  </details>
+  <p class="foot">Usa información autorizada y conserva los originales. Si contiene datos sensibles, utiliza una copia anonimizada o ficticia. Revisa los resultados antes de usarlos en tu trabajo.</p>
+</section>
+
 </main>
 <footer class="site-foot"><span>AITIC · Formación de IA aplicada al trabajo</span><span>URAL MOTOR · Grupo Ureta · Material interno</span></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -699,14 +919,14 @@ Motor Norte es un concesionario ficticio. Trabajas en Recambios. Quieres pedir a
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const KEY = 'aitic-ural-aula-v2';
-  const DEFAULT = 'jornada3';
+  const DEFAULT = 'jornada4';
   const sections = $$('.jornada');
   const tabs = $$('.tabs a');
   const saveBox = $('#save-device');
   const status = $('#save-status');
   const themeBtn = $('#theme-toggle');
   const notes = $$('[data-note]');
-  const state = { theme: 'light', notes: {}, caso: 'excel' };
+  const state = { theme: 'light', notes: {}, caso: 'excel', j4Step: 1, j4Case: 'general' };
 
   /* ---------- Avisos ---------- */
   let toastTimer;
@@ -746,13 +966,55 @@ Motor Norte es un concesionario ficticio. Trabajas en Recambios. Quieres pedir a
   }
   for (const b of $$('[data-case-btn]')) b.addEventListener('click', () => { setCase(b.dataset.caseBtn); persist(); });
 
+  /* ---------- Jornada 4: un paso visible y ayudas opcionales ---------- */
+  const j4 = $('#jornada4');
+  const stepNames = ['Tu tarea', 'Archivos', 'Primera prueba', 'Comprobar', 'Repetir', 'Guardar'];
+  function setJ4Step(value, focus = false) {
+    const parsed = Number(value);
+    const n = Number.isInteger(parsed) && parsed >= 1 && parsed <= 6 ? parsed : 1;
+    state.j4Step = n;
+    for (const p of $$('[data-j4-panel]', j4)) p.hidden = Number(p.dataset.j4Panel) !== n;
+    for (const b of $$('[data-j4-step]', j4)) {
+      if (Number(b.dataset.j4Step) === n) b.setAttribute('aria-current', 'step');
+      else b.removeAttribute('aria-current');
+    }
+    $('#j4-position').textContent = 'Paso ' + n + ' de 6 · ' + stepNames[n - 1];
+    $('#j4-prev').disabled = n === 1;
+    $('#j4-next').disabled = n === 6;
+    $('#j4-next').textContent = n === 6 ? 'Último paso' : 'Siguiente paso →';
+    if (focus) {
+      const title = $('#j4-h' + n);
+      title.focus({ preventScroll: true });
+      $('#j4-trabajo').scrollIntoView({ block: 'start', behavior: 'auto' });
+    }
+  }
+  function setJ4Case(value) {
+    const allowed = ['general', 'cruce', 'facturas', 'plantilla', 'rappel'];
+    state.j4Case = allowed.includes(value) ? value : 'general';
+    $('#j4-case').value = state.j4Case;
+    for (const p of $$('[data-j4-case]', j4)) p.hidden = p.dataset.j4Case !== state.j4Case;
+  }
+  for (const b of $$('[data-j4-step]', j4)) b.addEventListener('click', () => { setJ4Step(b.dataset.j4Step, true); persist(); });
+  $('#j4-prev').addEventListener('click', () => { setJ4Step(state.j4Step - 1, true); persist(); });
+  $('#j4-next').addEventListener('click', () => { setJ4Step(state.j4Step + 1, true); persist(); });
+  $('#j4-case').addEventListener('change', e => { setJ4Case(e.target.value); persist(); });
+  for (const b of $$('[data-j4-jump]', j4)) b.addEventListener('click', () => {
+    const target = document.getElementById(b.dataset.j4Jump);
+    if (!target) return;
+    target.open = true;
+    const summary = $('summary', target);
+    summary.focus({ preventScroll: true });
+    target.scrollIntoView({ block: 'start', behavior: 'auto' });
+  });
+
+
   /* ---------- Notas: memoria en sesión, guardado opcional ---------- */
   function collect() { const o = {}; for (const n of notes) if (n.value.trim()) o[n.dataset.note] = n.value; return o; }
   function restore(o) { for (const n of notes) if (typeof o?.[n.dataset.note] === 'string') n.value = o[n.dataset.note]; }
   function persist() {
     state.notes = collect();
     if (!saveBox.checked) return;
-    try { localStorage.setItem(KEY, JSON.stringify({ theme: state.theme, caso: state.caso, notes: state.notes })); status.textContent = 'Notas guardadas en este navegador.'; }
+    try { localStorage.setItem(KEY, JSON.stringify({ theme: state.theme, caso: state.caso, notes: state.notes, j4Step: state.j4Step, j4Case: state.j4Case })); status.textContent = 'Notas y punto de lectura guardados en este navegador.'; }
     catch { saveBox.checked = false; status.textContent = 'No se ha podido guardar aquí. Descarga tus notas antes de cerrar.'; }
   }
   for (const n of notes) n.addEventListener('input', persist);
@@ -761,7 +1023,7 @@ Motor Norte es un concesionario ficticio. Trabajas en Recambios. Quieres pedir a
     try { localStorage.removeItem(KEY); status.textContent = 'Guardado desactivado. Las notas siguen en pantalla hasta cerrar.'; } catch { status.textContent = 'No se ha podido borrar la copia guardada.'; }
   });
   $('#clear-notes').addEventListener('click', () => {
-    if (!confirm('¿Borrar todas tus notas de las tres jornadas en este navegador? Los archivos ya descargados se conservan.')) return;
+    if (!confirm('¿Borrar todas tus notas de las cuatro jornadas en este navegador? Los archivos ya descargados se conservan.')) return;
     for (const n of notes) n.value = '';
     for (const s of $$('.status')) s.textContent = '';
     try { localStorage.removeItem(KEY); } catch {}
@@ -834,10 +1096,10 @@ Motor Norte es un concesionario ficticio. Trabajas en Recambios. Quieres pedir a
   /* ---------- Arranque ---------- */
   try {
     const saved = JSON.parse(localStorage.getItem(KEY) || 'null');
-    if (saved) { saveBox.checked = true; restore(saved.notes); setTheme(saved.theme); setCase(saved.caso); state.notes = collect(); status.textContent = 'Guardado activado en este navegador. Tus notas se han recuperado.'; }
+    if (saved) { saveBox.checked = true; restore(saved.notes); setTheme(saved.theme); setCase(saved.caso); setJ4Step(saved.j4Step); setJ4Case(saved.j4Case); state.notes = collect(); status.textContent = 'Guardado activado en este navegador. Tus notas se han recuperado.'; }
     else setTheme('light');
   } catch { setTheme('light'); status.textContent = 'Guardado local no disponible. Descarga tus notas antes de cerrar.'; }
-  if (!saveBox.checked) setCase('excel');
+  if (!saveBox.checked) { setCase('excel'); setJ4Step(1); setJ4Case('general'); }
   show(false);
 })();
 </script>
